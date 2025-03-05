@@ -1,0 +1,13 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:mysql://localhost/bootcamp2025
+    username: root
+    password: P455.f0r.My5QL
+  jpa:
+    hibernate:
+      ddl-auto: update
