@@ -1,11 +1,10 @@
 package com.example.demo.commons.configurations.beans;
-
-import com.example.demo.category.domain.ports.in.CategoryServicePort;
-import com.example.demo.category.domain.ports.out.CategoryPersistencePort;
-import com.example.demo.category.domain.usecases.CategoryUseCase;
-import com.example.demo.category.infrastructure.adapters.persistence.CategoryPersistenceAdapter;
-import com.example.demo.category.infrastructure.mappers.CategoryEntityMapper;
-import com.example.demo.category.infrastructure.repositories.mysql.CategoryRepository;
+import com.example.demo.users.domain.ports.in.UserServicePort;
+import com.example.demo.users.domain.ports.out.UserPersistencePort;
+import com.example.demo.users.domain.usecases.UserUseCase;
+import com.example.demo.users.infrastructure.adapters.persistence.UserPersistenceAdapter;
+import com.example.demo.users.infrastructure.mappers.UserEntityMapper;
+import com.example.demo.users.infrastructure.repositories.mysql.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,16 +12,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RequiredArgsConstructor
 public class BeanConfiguration {
-    private final CategoryRepository categoryRepository;
-    private final CategoryEntityMapper categoryEntityMapper;
+    private final UserRepository userRepository;
+    private final UserEntityMapper userEntityMapper;
 
     @Bean
-    public CategoryServicePort categoryServicePort() {
-        return new CategoryUseCase(categoryPersistencePort());
+    public UserServicePort userServicePort() {
+        return new UserUseCase(userPersistencePort());
     }
 
     @Bean
-    public CategoryPersistencePort categoryPersistencePort() {
-        return new CategoryPersistenceAdapter(categoryRepository, categoryEntityMapper);
+    public UserPersistencePort userPersistencePort() {
+        return new UserPersistenceAdapter(userRepository, userEntityMapper);
     }
 }
