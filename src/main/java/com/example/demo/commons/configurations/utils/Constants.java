@@ -5,6 +5,6 @@ public final class Constants {
         throw new IllegalStateException("Utility class");
     }
 
-    public static final String SAVE_CATEGORY_RESPONSE_MESSAGE = "Category created successfully.";
-    public static final String PAGEABLE_FIELD_NAME = "name";
+    public static final String CREATE_USERS_RESPONSE_MESSAGE = "users created successfully.";
+
 }
