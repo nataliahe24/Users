@@ -5,7 +5,7 @@ import com.example.demo.users.domain.exceptions.ExceededAgeAllowed;
 import java.time.LocalDate;
 import java.time.Period;
 
-import static com.example.demo.users.domain.utils.constants.DomainConstants.MIN_AGE_ALLOWED;
+import static com.example.demo.users.domain.utils.constants.UserDomainConstants.MIN_AGE_ALLOWED;
 
 public class ValidAge {
 

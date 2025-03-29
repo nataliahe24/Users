@@ -1,13 +1,13 @@
 package com.example.demo.users.domain.model;
 
 import com.example.demo.users.domain.exceptions.*;
-import com.example.demo.users.domain.utils.constants.DomainConstants;
+import com.example.demo.users.domain.utils.constants.UserDomainConstants;
 import com.example.demo.users.domain.utils.validation.ValidAge;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;
 import java.util.Objects;
-import static com.example.demo.users.domain.utils.constants.DomainConstants.*;
+import static com.example.demo.users.domain.utils.constants.UserDomainConstants.*;
 
 @Getter
 @Setter
@@ -20,7 +20,6 @@ public class UserModel {
     private String phoneNumber;
     private LocalDate birthDate;
     private String email;
-    @Setter
     private String password;
     private String role;
 
@@ -50,24 +49,29 @@ public class UserModel {
 
 
         public void setFirstName (String firstName){
-            this.firstName = Objects.requireNonNull(firstName, DomainConstants.FIELD_FIRSTNAME_NULL_MESSAGE);
+            this.firstName = Objects.requireNonNull(firstName, UserDomainConstants.FIELD_FIRSTNAME_NULL_MESSAGE);
         }
         public void setLastName (String lastName){
-            this.lastName = Objects.requireNonNull(lastName, DomainConstants.FIELD_LASTNAME_NULL_MESSAGE);
+            this.lastName = Objects.requireNonNull(lastName, UserDomainConstants.FIELD_LASTNAME_NULL_MESSAGE);
         }
         public void setIdentityDocument (Integer identityDocument){
-            this.identityDocument = Objects.requireNonNull(identityDocument, DomainConstants.FIELD_IDENTITY_DOCUMENT_NULL_MESSAGE);
+            this.identityDocument = Objects.requireNonNull(identityDocument, UserDomainConstants.FIELD_IDENTITY_DOCUMENT_NULL_MESSAGE);
         }
         public void setPhoneNumber (String phoneNumber){
-            this.phoneNumber = Objects.requireNonNull(phoneNumber, DomainConstants.FIELD_PHONE_NUMBER_NULL_MESSAGE);
+            this.phoneNumber = Objects.requireNonNull(phoneNumber, UserDomainConstants.FIELD_PHONE_NUMBER_NULL_MESSAGE);
         }
 
         public void setBirthDate (LocalDate birthDate){
-        this.birthDate = Objects.requireNonNull(birthDate, DomainConstants.FIELD_BIRTH_DATE_NULL_MESSAGE);
+        this.birthDate = Objects.requireNonNull(birthDate, UserDomainConstants.FIELD_BIRTH_DATE_NULL_MESSAGE);
         }
 
          public void setEmail(String email) {
-             this.email = Objects.requireNonNull(email, DomainConstants.FIELD_EMAIL_NULL_MESSAGE);
+             this.email = Objects.requireNonNull(email, UserDomainConstants.FIELD_EMAIL_NULL_MESSAGE);
+         }
+
+         public void setPassword(String password) {
+             this.password = Objects.requireNonNull(password, FIELD_PASSWORD_NULL_MESSAGE);
+
          }
          public void setRole(String role) {
         this.role = Objects.requireNonNull(role, FIELD_ROLE_NULL_MESSAGE);
