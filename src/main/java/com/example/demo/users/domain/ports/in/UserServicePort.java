@@ -5,6 +5,6 @@ import com.example.demo.users.domain.model.UserModel;
 
 
 public interface UserServicePort {
-    void create(UserModel usersModel);
+    void create(UserModel userModel);
 
 }
