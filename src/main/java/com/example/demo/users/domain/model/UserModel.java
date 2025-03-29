@@ -5,11 +5,13 @@ import com.example.demo.users.domain.utils.constants.DomainConstants;
 import com.example.demo.users.domain.utils.validation.ValidAge;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 import java.util.Objects;
-
 import static com.example.demo.users.domain.utils.constants.DomainConstants.*;
+
 @Getter
 @Setter
 public class UserModel {
@@ -21,8 +23,11 @@ public class UserModel {
     private String phoneNumber;
     private LocalDate birthDate;
     private String email;
-    private final String password;
+    private String password;
     private String role;
+
+    private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); // Instancia de BCrypt
+
 
     public UserModel(String firstName, String lastName, Integer identityDocument, String phoneNumber,
                      LocalDate birthDate, String email, String password, String role) {
@@ -30,8 +35,9 @@ public class UserModel {
         this.lastName = lastName;
         this.identityDocument = identityDocument;
         this.birthDate = birthDate;
+        this.phoneNumber = phoneNumber;
         this.email = email;
-        this.password = password;
+        this.password = passwordEncoder.encode(password);
         this.role = role;
 
         if (phoneNumber.length() > FIELD_PHONE_NUMBER_CHARACTERS) {
@@ -67,8 +73,10 @@ public class UserModel {
          public void setEmail(String email) {
              this.email = Objects.requireNonNull(email, DomainConstants.FIELD_EMAIL_NULL_MESSAGE);
          }
-         public static void setRole(String role) {
-        UserModel.role = Objects.requireNonNull(role, FIELD_ROLE_NULL_MESSAGE);
+         public void setRole(String role) {
+        this.role = Objects.requireNonNull(role, FIELD_ROLE_NULL_MESSAGE);
         }
 
+        public void setPassword(String encodedPassword) {
+    }
 }
