@@ -17,7 +17,7 @@ public class UserUseCase implements UserServicePort {
 
     @Override
     public void create(UserModel userModel) {
-        UserModel user = userPersistencePort.getUserByEmail(userModel.getEmail());
+        UserModel user = userPersistencePort.getUserByEmailAndIdentityDocument(userModel.getEmail(), userModel.getIdentityDocument());
         if (user != null) {
             throw new UserAlreadyExistsException();
         }
