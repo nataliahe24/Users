@@ -5,9 +5,6 @@ import com.example.demo.users.domain.utils.constants.DomainConstants;
 import com.example.demo.users.domain.utils.validation.ValidAge;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 import java.time.LocalDate;
 import java.util.Objects;
 import static com.example.demo.users.domain.utils.constants.DomainConstants.*;
@@ -23,10 +20,9 @@ public class UserModel {
     private String phoneNumber;
     private LocalDate birthDate;
     private String email;
+    @Setter
     private String password;
     private String role;
-
-    private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); // Instancia de BCrypt
 
 
     public UserModel(String firstName, String lastName, Integer identityDocument, String phoneNumber,
@@ -37,7 +33,7 @@ public class UserModel {
         this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.password = passwordEncoder.encode(password);
+        this.password = password;
         this.role = role;
 
         if (phoneNumber.length() > FIELD_PHONE_NUMBER_CHARACTERS) {
@@ -77,6 +73,4 @@ public class UserModel {
         this.role = Objects.requireNonNull(role, FIELD_ROLE_NULL_MESSAGE);
         }
 
-        public void setPassword(String encodedPassword) {
-    }
 }
