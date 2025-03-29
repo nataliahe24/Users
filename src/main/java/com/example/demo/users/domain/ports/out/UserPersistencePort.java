@@ -4,5 +4,5 @@ import com.example.demo.users.domain.model.UserModel;
 
 public interface UserPersistencePort {
     void create(UserModel userModel);
-    UserModel getUserByEmail(String userEmail);
+    UserModel getUserByEmailAndIdentityDocument(String userEmail, Integer userIdentityDocument );
 }
