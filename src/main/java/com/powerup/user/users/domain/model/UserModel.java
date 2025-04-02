@@ -4,6 +4,7 @@ import com.powerup.user.users.domain.exceptions.PhoneNumberCharacterInvalid;
 import com.powerup.user.users.domain.exceptions.PhoneNumberExceededException;
 import com.powerup.user.users.domain.utils.constants.UserDomainConstants;
 import com.powerup.user.users.domain.utils.validation.ValidAge;
+import com.powerup.user.users.domain.utils.validation.ValidEmail;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;
@@ -45,6 +46,7 @@ public class UserModel {
         }
 
         ValidAge.validateBirthDate(birthDate);
+        ValidEmail.isValidEmail(email);
 
         }
 

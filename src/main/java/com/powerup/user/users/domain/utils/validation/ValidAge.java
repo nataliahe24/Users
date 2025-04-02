@@ -10,7 +10,7 @@ import static com.powerup.user.users.domain.utils.constants.UserDomainConstants.
 public class ValidAge {
 
     private ValidAge() {
-        throw new UnsupportedOperationException("Utility class - Cannot be instantiated");
+        throw new UnsupportedOperationException();
     }
 
    public static void validateBirthDate(LocalDate birthDate) {
