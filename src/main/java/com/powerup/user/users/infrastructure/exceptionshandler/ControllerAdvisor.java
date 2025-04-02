@@ -1,9 +1,6 @@
 package com.powerup.user.users.infrastructure.exceptionshandler;
 
-import com.powerup.user.users.domain.exceptions.ExceededAgeAllowed;
-import com.powerup.user.users.domain.exceptions.PhoneNumberCharacterInvalid;
-import com.powerup.user.users.domain.exceptions.PhoneNumberExceededException;
-import com.powerup.user.users.domain.exceptions.UserAlreadyExistsException;
+import com.powerup.user.users.domain.exceptions.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -34,6 +31,12 @@ public class ControllerAdvisor {
     @ExceptionHandler(ExceededAgeAllowed.class)
     public ResponseEntity<ExceptionResponse> handleExceededAgeAllowed(ExceededAgeAllowed exception) {
         return ResponseEntity.badRequest().body(new ExceptionResponse(ExceptionConstants.EXCEEDED_AGE_EXCEPTION,
+                LocalDateTime.now()));
+    }
+
+    @ExceptionHandler(EmailStructureInvalid.class)
+    public ResponseEntity<ExceptionResponse> handleEmailStructureInvalid(EmailStructureInvalid exception){
+        return ResponseEntity.badRequest().body(new ExceptionResponse(ExceptionConstants.EMAIL_INVALID_EXCEPTION,
                 LocalDateTime.now()));
     }
 

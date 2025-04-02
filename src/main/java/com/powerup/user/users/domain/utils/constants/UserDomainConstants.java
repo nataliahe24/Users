@@ -19,4 +19,6 @@ public final class UserDomainConstants {
     public static final String FIELD_PHONE_CHARACTERS_INVALID = "++12345678901";
     public static final String FIELD_PHONE_NUMBER_EXCEEDED_CHARACTERS = "12345678901234";
     public static final String FIELD_PHONE_NUMBER_VALID_CHARACTERS = "1234567890123";
+    public static final String EMAIL_STRUCTURE = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+
 }
