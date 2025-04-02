@@ -2,6 +2,7 @@ package com.powerup.user.users.domain.model;
 
 import com.powerup.user.users.domain.exceptions.PhoneNumberCharacterInvalid;
 import com.powerup.user.users.domain.exceptions.PhoneNumberExceededException;
+import com.powerup.user.users.domain.utils.constants.Role;
 import com.powerup.user.users.domain.utils.constants.UserDomainConstants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,7 @@ class UserModelTest {
     private LocalDate birthDate;
     private String email;
     private String password;
-    private String role;
+    private Role role;
 
 
     @BeforeEach
@@ -31,7 +32,7 @@ class UserModelTest {
         birthDate = LocalDate.of(1990, 1, 1);
         email = "johndoe@example.com";
         password = "securepassword";
-        role = "SELLER";
+        role = Role.SELLER;
 
     }
 

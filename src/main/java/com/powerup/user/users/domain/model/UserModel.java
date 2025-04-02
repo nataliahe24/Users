@@ -2,6 +2,7 @@ package com.powerup.user.users.domain.model;
 
 import com.powerup.user.users.domain.exceptions.PhoneNumberCharacterInvalid;
 import com.powerup.user.users.domain.exceptions.PhoneNumberExceededException;
+import com.powerup.user.users.domain.utils.constants.Role;
 import com.powerup.user.users.domain.utils.constants.UserDomainConstants;
 import com.powerup.user.users.domain.utils.validation.ValidAge;
 import com.powerup.user.users.domain.utils.validation.ValidEmail;
@@ -23,11 +24,11 @@ public class UserModel {
     private LocalDate birthDate;
     private String email;
     private String password;
-    private String role;
+    private Role role;
 
 
     public UserModel(String firstName, String lastName, Integer identityDocument, String phoneNumber,
-                     LocalDate birthDate, String email, String password, String role) {
+                     LocalDate birthDate, String email, String password, Role role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.identityDocument = identityDocument;
@@ -76,7 +77,7 @@ public class UserModel {
              this.password = Objects.requireNonNull(password, FIELD_PASSWORD_NULL_MESSAGE);
 
          }
-         public void setRole(String role) {
+         public void setRole(Role role) {
         this.role = Objects.requireNonNull(role, FIELD_ROLE_NULL_MESSAGE);
         }
 
