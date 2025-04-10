@@ -3,6 +3,7 @@ package com.powerup.user.users.domain.usecases;
 import com.powerup.user.users.domain.model.UserModel;
 import com.powerup.user.users.domain.ports.out.PasswordEncoderPort;
 import com.powerup.user.users.domain.ports.out.UserPersistencePort;
+import com.powerup.user.users.domain.utils.constants.Role;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -25,7 +26,7 @@ class UserUseCaseTest {
     private String email;
     private String password;
     private String encodedPassword;
-    private String role;
+    private Role role;
 
     @Mock
     private UserPersistencePort userPersistencePort;
@@ -49,7 +50,7 @@ class UserUseCaseTest {
         email = "johndoe@example.com";
         password ="securePassword";
         encodedPassword = "encodedPassword123";
-        role = "SELLER";
+        role = Role.SELLER;
 
     }
 
