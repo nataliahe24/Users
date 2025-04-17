@@ -23,8 +23,9 @@ public class UserEntity {
     private LocalDate birthDate;
     private String email;
     private String password;
-    @Enumerated(EnumType.STRING)
-    private Role role;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
+    private RoleEntity role;
 
     }
 
