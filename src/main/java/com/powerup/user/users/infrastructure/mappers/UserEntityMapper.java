@@ -5,7 +5,8 @@ import com.powerup.user.users.infrastructure.entities.UserEntity;
 import org.mapstruct.Mapper;
 
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",
+        uses = {RoleEntityMapper.class})
 public interface UserEntityMapper {
     UserEntity modelToEntity(UserModel userModel);
     UserModel entityToModel(UserEntity userEntity);

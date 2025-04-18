@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
 @Mapper(componentModel = "spring",
-        unmappedTargetPolicy = ReportingPolicy.IGNORE)
+        unmappedTargetPolicy = ReportingPolicy.IGNORE,uses = {RoleDtoMapper.class} )
 public interface UserDtoMapper {
     UserModel requestToModel(CreateUserRequest createdSellerUserRequest);
     UserResponse modelToResponse(UserModel userModel);

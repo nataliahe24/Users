@@ -24,11 +24,11 @@ public class UserModel {
     private LocalDate birthDate;
     private String email;
     private String password;
-    private Role role;
+    private RoleModel role;
 
 
     public UserModel(String firstName, String lastName, Integer identityDocument, String phoneNumber,
-                     LocalDate birthDate, String email, String password, Role role) {
+                     LocalDate birthDate, String email, String password, RoleModel role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.identityDocument = identityDocument;
@@ -77,7 +77,7 @@ public class UserModel {
              this.password = Objects.requireNonNull(password, FIELD_PASSWORD_NULL_MESSAGE);
 
          }
-         public void setRole(Role role) {
+         public void setRole(RoleModel role) {
         this.role = Objects.requireNonNull(role, FIELD_ROLE_NULL_MESSAGE);
         }
 
