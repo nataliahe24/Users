@@ -1,5 +1,6 @@
 package com.powerup.user.users.domain.usecases;
 
+import com.powerup.user.users.domain.model.RoleModel;
 import com.powerup.user.users.domain.model.UserModel;
 import com.powerup.user.users.domain.ports.out.PasswordEncoderPort;
 import com.powerup.user.users.domain.ports.out.UserPersistencePort;
@@ -26,7 +27,7 @@ class UserUseCaseTest {
     private String email;
     private String password;
     private String encodedPassword;
-    private Role role;
+    private RoleModel role;
 
     @Mock
     private UserPersistencePort userPersistencePort;
@@ -50,14 +51,14 @@ class UserUseCaseTest {
         email = "johndoe@example.com";
         password ="securePassword";
         encodedPassword = "encodedPassword123";
-        role = Role.SELLER;
+        role = new RoleModel(2L, "SELLER", "ROLE");
 
     }
 
     @Test
     void shouldCreateUserSuccessfully() {
 
-        when(userPersistencePort.getUserByEmailAndIdentityDocument(email, identityDocument)).thenReturn(null);
+        when(userPersistencePort.getUserByEmail(email)).thenReturn(null);
         when(passwordEncoderPort.encode(password)).thenReturn(encodedPassword);
 
         UserModel userModel = new UserModel(firstName, lastName, identityDocument, phoneNumber, birthDate, email, password, role);
