@@ -4,5 +4,5 @@ import com.powerup.user.users.domain.model.UserModel;
 
 public interface UserPersistencePort {
     void create(UserModel userModel);
-    UserModel getUserByEmailAndIdentityDocument(String userEmail, Integer userIdentityDocument );
+    UserModel getUserByEmail(String userEmail);
 }

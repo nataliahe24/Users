@@ -1,5 +1,6 @@
 package com.powerup.user.users.domain.usecases;
 
+import com.powerup.user.users.domain.exceptions.InvalidRoleException;
 import com.powerup.user.users.domain.exceptions.UserAlreadyExistsException;
 import com.powerup.user.users.domain.model.UserModel;
 import com.powerup.user.users.domain.ports.in.UserServicePort;
@@ -17,7 +18,8 @@ public class UserUseCase implements UserServicePort {
 
     @Override
     public void create(UserModel userModel) {
-        UserModel user = userPersistencePort.getUserByEmailAndIdentityDocument(userModel.getEmail(), userModel.getIdentityDocument());
+
+        UserModel user = userPersistencePort.getUserByEmail(userModel.getEmail());
         if (user != null) {
             throw new UserAlreadyExistsException();
         }

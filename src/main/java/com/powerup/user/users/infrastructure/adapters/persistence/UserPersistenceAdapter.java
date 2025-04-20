@@ -21,7 +21,7 @@ public class UserPersistenceAdapter implements UserPersistencePort {
     }
 
     @Override
-    public UserModel getUserByEmailAndIdentityDocument(String userEmail, Integer userIdentityDocument) {
+    public UserModel getUserByEmail(String userEmail) {
         return userEntityMapper.entityToModel(userRepository.findByEmail(userEmail).orElse(null));
     }
 
