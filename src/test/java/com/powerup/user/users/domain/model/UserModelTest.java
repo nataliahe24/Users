@@ -19,7 +19,7 @@ class UserModelTest {
     private LocalDate birthDate;
     private String email;
     private String password;
-    private Role role;
+    private RoleModel role;
 
 
     @BeforeEach
@@ -32,7 +32,7 @@ class UserModelTest {
         birthDate = LocalDate.of(1990, 1, 1);
         email = "johndoe@example.com";
         password = "securepassword";
-        role = Role.SELLER;
+        role = new RoleModel(2L, "SELLER", "ROLE");
 
     }
 
