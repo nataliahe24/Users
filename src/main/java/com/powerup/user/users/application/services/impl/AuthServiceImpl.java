@@ -28,13 +28,23 @@ public class AuthServiceImpl implements AuthService {
         String email = request.email();
         String password = request.password();
 
-        Authentication authentication = this.authenticate(email, password);
+        // Obtener el usuario para autenticación y para acceder a su rol
+        UserModel user = authServicePort.login(email, password);
+        if (user == null) {
+            throw new RuntimeException("Usuario no encontrado o contraseña incorrecta");
+        }
+
+        // Crear la autenticación
+        List<SimpleGrantedAuthority> authorities = Collections.singletonList(
+            new SimpleGrantedAuthority(user.getRole().getName()));
+        Authentication authentication = new UsernamePasswordAuthenticationToken(
+            email, password, authorities);
+            
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String accessToken = jwUtils.createToken(authentication);
-
-        return new LoginResponse(email, "Usuario Logueado", accessToken);
+        
+        return new LoginResponse(email, "Usuario Logueado", accessToken, user.getRole().getId());
     }
-
 
     public Authentication authenticate(String email, String password) {
         System.out.println("Autenticando usuario con email: " + email);// prueba
