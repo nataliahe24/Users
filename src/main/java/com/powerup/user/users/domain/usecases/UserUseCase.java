@@ -1,6 +1,6 @@
 package com.powerup.user.users.domain.usecases;
 
-import com.powerup.user.users.domain.exceptions.InvalidRoleException;
+
 import com.powerup.user.users.domain.exceptions.UserAlreadyExistsException;
 import com.powerup.user.users.domain.model.UserModel;
 import com.powerup.user.users.domain.ports.in.UserServicePort;

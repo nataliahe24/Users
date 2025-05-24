@@ -2,7 +2,6 @@ package com.powerup.user.users.domain.model;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Builder
 @Getter
