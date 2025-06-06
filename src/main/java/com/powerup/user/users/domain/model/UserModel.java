@@ -19,7 +19,7 @@ public class UserModel {
     private Long id;
     private String firstName;
     private String lastName;
-    private Integer identityDocument;
+    private Long identityDocument;
     private String phoneNumber;
     private LocalDate birthDate;
     private String email;
@@ -27,7 +27,7 @@ public class UserModel {
     private RoleModel role;
 
 
-    public UserModel(String firstName, String lastName, Integer identityDocument, String phoneNumber,
+    public UserModel(String firstName, String lastName, Long identityDocument, String phoneNumber,
                      LocalDate birthDate, String email, String password, RoleModel role) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -58,7 +58,7 @@ public class UserModel {
         public void setLastName (String lastName){
             this.lastName = Objects.requireNonNull(lastName, UserDomainConstants.FIELD_LASTNAME_NULL_MESSAGE);
         }
-        public void setIdentityDocument (Integer identityDocument){
+        public void setIdentityDocument (Long identityDocument){
             this.identityDocument = Objects.requireNonNull(identityDocument, UserDomainConstants.FIELD_IDENTITY_DOCUMENT_NULL_MESSAGE);
         }
         public void setPhoneNumber (String phoneNumber){
