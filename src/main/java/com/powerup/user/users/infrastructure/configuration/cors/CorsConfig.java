@@ -1,4 +1,4 @@
-package com.powerup.user.users.infrastructure.config;
+package com.powerup.user.users.infrastructure.configuration.cors;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

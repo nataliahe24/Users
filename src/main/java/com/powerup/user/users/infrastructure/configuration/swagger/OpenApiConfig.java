@@ -1,4 +1,4 @@
-package com.powerup.user.users.infrastructure.config;
+package com.powerup.user.users.infrastructure.configuration.swagger;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
