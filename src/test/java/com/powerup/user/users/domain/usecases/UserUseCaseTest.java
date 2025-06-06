@@ -4,7 +4,6 @@ import com.powerup.user.users.domain.model.RoleModel;
 import com.powerup.user.users.domain.model.UserModel;
 import com.powerup.user.users.domain.ports.out.PasswordEncoderPort;
 import com.powerup.user.users.domain.ports.out.UserPersistencePort;
-import com.powerup.user.users.domain.utils.constants.Role;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -21,7 +20,7 @@ class UserUseCaseTest {
 
     private String firstName;
     private String lastName;
-    private Integer identityDocument;
+    private Long identityDocument;
     private String phoneNumber;
     private LocalDate birthDate;
     private String email;
@@ -45,7 +44,7 @@ class UserUseCaseTest {
 
         firstName = "John";
         lastName = "Doe";
-        identityDocument = 123456789;
+        identityDocument = 123456789L;
         phoneNumber = "1234567890";
         birthDate = LocalDate.of(1990, 1, 1);
         email = "johndoe@example.com";

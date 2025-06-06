@@ -2,7 +2,6 @@ package com.powerup.user.users.domain.model;
 
 import com.powerup.user.users.domain.exceptions.PhoneNumberCharacterInvalid;
 import com.powerup.user.users.domain.exceptions.PhoneNumberExceededException;
-import com.powerup.user.users.domain.utils.constants.Role;
 import com.powerup.user.users.domain.utils.constants.UserDomainConstants;
 import com.powerup.user.users.domain.utils.validation.ValidAge;
 import com.powerup.user.users.domain.utils.validation.ValidEmail;
