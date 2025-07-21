@@ -2,7 +2,6 @@ package com.powerup.user.users.domain.model;
 
 import com.powerup.user.users.domain.exceptions.PhoneNumberCharacterInvalid;
 import com.powerup.user.users.domain.exceptions.PhoneNumberExceededException;
-import com.powerup.user.users.domain.utils.constants.Role;
 import com.powerup.user.users.domain.utils.constants.UserDomainConstants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +13,7 @@ class UserModelTest {
 
     private String firstName;
     private String lastName;
-    private Integer identityDocument;
+    private Long identityDocument;
     private String phoneNumber;
     private LocalDate birthDate;
     private String email;
@@ -27,7 +26,7 @@ class UserModelTest {
 
         firstName = "John";
         lastName = "Doe";
-        identityDocument = 123456789;
+        identityDocument = 55234604789L;
         phoneNumber = "1234567890";
         birthDate = LocalDate.of(1990, 1, 1);
         email = "johndoe@example.com";

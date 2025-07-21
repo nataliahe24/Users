@@ -11,9 +11,9 @@ spring:
   application:
     name: demo
   datasource:
-    url: jdbc:mysql://localhost/users
+    url: jdbc:mysql://localhost:3306/users
     username: root
-    password: password
+    password: admin
   jpa:
     hibernate:
       ddl-auto: update

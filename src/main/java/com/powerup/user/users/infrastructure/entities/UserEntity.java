@@ -1,6 +1,5 @@
 package com.powerup.user.users.infrastructure.entities;
 
-import com.powerup.user.users.domain.utils.constants.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

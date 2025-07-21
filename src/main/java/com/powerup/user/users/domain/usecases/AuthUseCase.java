@@ -4,6 +4,7 @@ import com.powerup.user.users.domain.exceptions.CredentialsInvalidException;
 import com.powerup.user.users.domain.model.UserModel;
 import com.powerup.user.users.domain.ports.in.AuthServicePort;
 import com.powerup.user.users.domain.ports.out.UserPersistencePort;
+import com.powerup.user.users.domain.utils.constants.UserDomainConstants;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -22,13 +23,12 @@ public class AuthUseCase implements AuthServicePort {
         UserModel user = userPersistencePort.getUserByEmail(email);
 
         if (user == null) {
-            throw new UsernameNotFoundException("Usuario no encontrado con correo: " + email);
+            throw new UsernameNotFoundException(UserDomainConstants.USERS_NOT_FOUND + email);
         }
 
-        if (user == null || !passwordEncoder.matches(password, user.getPassword())) {
-            throw new CredentialsInvalidException();
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            throw new CredentialsInvalidException(UserDomainConstants.INVALID_USERS_RESPONSE_MESSAGE);
         }
-
         return user;
     }
 }

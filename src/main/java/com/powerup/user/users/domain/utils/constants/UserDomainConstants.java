@@ -20,5 +20,7 @@ public final class UserDomainConstants {
     public static final String FIELD_PHONE_NUMBER_EXCEEDED_CHARACTERS = "12345678901234";
     public static final String FIELD_PHONE_NUMBER_VALID_CHARACTERS = "1234567890123";
     public static final String EMAIL_STRUCTURE = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+    public static final String INVALID_USERS_RESPONSE_MESSAGE = "Usuario no encontrado o contraseña incorrecta";
+    public static final String USERS_NOT_FOUND = "Usuario no encontrado con correo: ";
 
 }

@@ -2,7 +2,9 @@ package com.powerup.user.users.domain.model;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Builder
 @Getter
 public class RoleModel {
@@ -11,18 +13,6 @@ public class RoleModel {
     private String name;
     private String description;
 
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public RoleModel(Long id, String name, String description) {
         this.id = id;
