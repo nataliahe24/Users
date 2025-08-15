@@ -9,7 +9,7 @@ import com.powerup.user.users.infrastructure.adapters.persistence.PasswordEncode
 import com.powerup.user.users.infrastructure.adapters.persistence.UserPersistenceAdapter;
 import com.powerup.user.users.infrastructure.entities.UserEntity;
 import com.powerup.user.users.infrastructure.mappers.UserEntityMapper;
-import com.powerup.user.users.infrastructure.repositories.mysql.UserRepository;
+import com.powerup.user.users.infrastructure.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

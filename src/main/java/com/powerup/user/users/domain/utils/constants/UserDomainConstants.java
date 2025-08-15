@@ -5,6 +5,7 @@ public final class UserDomainConstants {
     private UserDomainConstants() {
         throw new IllegalStateException("Utility class");
     }
+
     public static final String FIELD_FIRSTNAME_NULL_MESSAGE = "Atributo 'nombre' no puede ser nulo";
     public static final String FIELD_LASTNAME_NULL_MESSAGE = "Atributo 'Apellido' no puede ser nulo";
     public static final String FIELD_IDENTITY_DOCUMENT_NULL_MESSAGE = "Atributo 'Documento de identidad' no puede ser nulo";

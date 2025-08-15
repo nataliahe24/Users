@@ -1,4 +1,4 @@
-package com.powerup.user.users.infrastructure.endpoints.rest;
+package com.powerup.user.users.infrastructure.endpoints;
 
 import com.powerup.user.users.application.dto.request.LoginUserRequest;
 import com.powerup.user.users.application.dto.response.LoginResponse;

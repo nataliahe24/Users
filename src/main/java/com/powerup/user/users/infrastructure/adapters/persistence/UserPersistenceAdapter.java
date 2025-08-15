@@ -3,7 +3,7 @@ package com.powerup.user.users.infrastructure.adapters.persistence;
 import com.powerup.user.users.domain.model.UserModel;
 import com.powerup.user.users.domain.ports.out.UserPersistencePort;
 import com.powerup.user.users.infrastructure.mappers.UserEntityMapper;
-import com.powerup.user.users.infrastructure.repositories.mysql.UserRepository;
+import com.powerup.user.users.infrastructure.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

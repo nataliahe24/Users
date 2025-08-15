@@ -10,10 +10,10 @@ import static com.powerup.user.users.domain.utils.constants.UserDomainConstants.
 public class ValidAge {
 
     private ValidAge() {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("Utility class");
     }
 
-   public static void validateBirthDate(LocalDate birthDate) {
+    public static void validateBirthDate(LocalDate birthDate) {
         int age = Period.between(birthDate, LocalDate.now()).getYears();
         if (age < MIN_AGE_ALLOWED) {
             throw new ExceededAgeAllowed();
